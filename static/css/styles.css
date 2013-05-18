@@ -1,0 +1,95 @@
+.form-signin, .form-up {
+    max-width: 250px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.form-signin {
+    position: absolute;
+    top: 100px;
+    right:18%;
+}
+
+.form-up {
+    position: absolute;
+    top: 300px;
+    right:18%;
+}
+  
+.form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px;
+    
+}
+.signup-btn {
+    background-color: #fd9a0f;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(top,#fee94f 0,#fd9a0f 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fee94f),color-stop(100%,#fd9a0f));
+    background-image: -webkit-linear-gradient(top,#fee94f 0,#fd9a0f 100%);
+    background-image: -ms-linear-gradient(top,#fee94f 0,#fd9a0f 100%);
+    background-image: -o-linear-gradient(top,#fee94f 0,#fd9a0f 100%);
+    background-image: linear-gradient(top,#fee94f 0,#fd9a0f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fee94f',endColorstr='#fd9a0f',GradientType=0);
+    border-color: #fa2;
+}
+
+.signup-btn:hover, .signup-btn:focus{
+    background-color: #fd9a0f;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(top,#fedc4d 0,#fd9512 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fedc4d),color-stop(100%,#fd9512));
+    background-image: -webkit-linear-gradient(top,#fedc4d 0,#fd9512 100%);
+    background-image: -ms-linear-gradient(top,#fedc4d 0,#fd9512 100%);
+    background-image: -o-linear-gradient(top,#fedc4d 0,#fd9512 100%);
+    background-image: linear-gradient(top,#fedc4d 0,#fd9512 100%);
+    border-color: #fa2;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fedc4d',endColorstr='#fd9512',GradientType=0);
+}
+
+.background {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    min-width:960px;
+    z-index: -100;
+}
+
+.backimage {
+    width: 100%;
+    height: 100%;
+}
+
+.front-welcome-text {
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    width: 470px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 22px;
+    color: #666;
+    text-align: left;
+}
+
+.front-welcome-text .strong{
+    color: #666;
+    display: inline;
+}
+.front-welcome-text .up{
+    color: #5BB75B;
+    display: inline;
+}
+.front-welcome-text .down{
+    color: #EE5F5B;
+    display: inline;
+}
