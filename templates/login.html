@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le styles -->
-    <link rel="stylesheet" href="{{ static_url("css/bootstrap.min.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css"/>
     <link href="//cdnjs.bootcss.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ static_url("css/styles.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css"/>
     <style type="text/css">
       body {
         padding-top: 40px;
@@ -26,7 +26,7 @@
   </head>
   <body >
         <div class="background">
-            <img class="backimage" src="{{ static_url("images/background.jpg") }}" />
+            <img class="backimage" src="/static/images/background.jpg" />
         </div>
     <div class="container">
     <!-- <% if(locals.error){ %>
@@ -37,12 +37,12 @@
     <% } %> -->
 
     <div class="front-welcome-text">
-        <h1>欢迎来到 <p class="up">U</p><p class="down">P</p><p class="strong">time</p></h1>
-        <p>与关心的人们一起，探寻系统的大千世界。</p>
+        <h1>欢迎来到 <p class="up">T</p><p class="down">or</p><p class="strong">nado</p></h1>
+        <p>与你关心的人们一起，探寻变化的大千世界。</p>
     </div>
 
     <form class="form-signin" action='/login' method='post'>
-        {% module xsrf_form_html() %}
+        {{ xsrf_form_html() }}
         <input type="text" id = "name" name="name" class="input-block-level" placeholder="用户名/Email" />
         <input type="password" id="pass" name="pass" class="input-block-level" placeholder="密码">
         <label class="checkbox">
@@ -51,7 +51,7 @@
     </form>
     
     <form class="form-up" action='/signup' method='post'>
-        {% module xsrf_form_html() %}
+        {{ xsrf_form_html() }}
         <label class="form-signin-heading">新来的？</label>
         <input type="text" id="sign-name" class="input-block-level" placeholder="Email">
         <input type="password" id="pass-sign" class="input-block-level" placeholder="密码">

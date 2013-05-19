@@ -2,7 +2,7 @@
 '''
 Created on 2013-5-18
 
-@author: Power
+@author: Microacup
 '''
 import handler.base
 

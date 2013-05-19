@@ -10,8 +10,10 @@ import os
 
 import handler.index
 import handler.login
+import handler.static
 
 from tornado.options import define, options, parse_command_line
+from jinja2 import Environment, FileSystemLoader
 
 define("port", default = 80, help = "run on the given port", type = int)
 
@@ -23,12 +25,15 @@ class Application(tornado.web.Application):
             static_path = os.path.join(os.path.dirname(__file__), "static"),
             cookie_secret = "wozaiwolubianjiandaoyifenqian",
             xsrf_cookies = True,
+            autoescape = None,
+            jinja2 = Environment(loader = FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")), trim_blocks = True),
         )
         
         handlers = [
             (r"/", handler.index.IndexHandler),
             (r"/login", handler.login.LoginHandler),
             (r"/signup", handler.login.SignHandler),
+            (r".*", handler.static.PageNotFoundHandler)
         ]
         
         tornado.web.Application.__init__(self, handlers, **settings)
@@ -40,4 +45,4 @@ def main():
     tornado.ioloop.IOLoop.instance().start()
     
 if __name__ == "__main__":
-    main();    
+    main()
