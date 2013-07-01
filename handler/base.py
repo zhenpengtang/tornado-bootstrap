@@ -5,7 +5,7 @@ Created on 2013-5-18
 @author: Microacup
 '''
 import tornado.web
-from locale import str
+import tornado.escape
 
 class BaseHandler(tornado.web.RequestHandler):
     def __init__(self, *argc, **argkw):
@@ -15,7 +15,8 @@ class BaseHandler(tornado.web.RequestHandler):
     def get_current_user(self):
         user_id = self.get_secure_cookie("user")
         if not user_id: return None
-        
+        return tornado.escape.json_decode(user_id)
+
     def render(self, template_name, **template_vars):
         html = self.render_string(template_name, **template_vars)
         self.write(html)

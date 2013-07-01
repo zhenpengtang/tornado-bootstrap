@@ -15,7 +15,7 @@ import handler.static
 from tornado.options import define, options, parse_command_line
 from jinja2 import Environment, FileSystemLoader
 
-define("port", default = 80, help = "run on the given port", type = int)
+define("port", default = 8080, help = "run on the given port", type = int)
 
 class Application(tornado.web.Application):
     def __init__(self):
