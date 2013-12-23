@@ -1,0 +1,31 @@
+html, body{
+  height: 100%;    
+  font-family: "微软雅黑"
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "微软雅黑";
+}
+
+body {
+  padding: 50px 0 30px;
+}
+
+.micro_main{
+    height: 100%;
+}
+.micro_text_right {
+    text-align: right;
+}
+.micro_avatar_middle {
+    border-radius: 24px;
+}
+
+.profile {
+    padding: 16px;
+}
+
+.table-nobordered th,
+.table-nobordered td {
+    border: 0px solid #ddd !important;
+}
