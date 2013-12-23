@@ -7,26 +7,28 @@ Created on 2013-5-18
 import tornado.web
 import tornado.ioloop
 import os
+import yaml
 
 import handler.index
 import handler.login
 import handler.static
 
-from tornado.options import define, options, parse_command_line
+from tornado.options import parse_command_line
 from jinja2 import Environment, FileSystemLoader
 
-define("port", default = 8080, help = "run on the given port", type = int)
+config = yaml.load(open('./config/config.yaml'))
+server = config['server']
 
 class Application(tornado.web.Application):
     def __init__(self):
         settings = dict(
-            login_url = "/login",
-            template_path = os.path.join(os.path.dirname(__file__), "templates"),
-            static_path = os.path.join(os.path.dirname(__file__), "static"),
-            cookie_secret = "wozaiwolubianjiandaoyifenqian",
-            xsrf_cookies = True,
-            autoescape = None,
-            jinja2 = Environment(loader = FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")), trim_blocks = True),
+            login_url="/login",
+            template_path=os.path.join(os.path.dirname(__file__), "templates"),
+            static_path=os.path.join(os.path.dirname(__file__), "static"),
+            cookie_secret=server['cookie_secret'],
+            xsrf_cookies=True,
+            autoescape=None,
+            jinja2=Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")), trim_blocks=True),
         )
         
         handlers = [
@@ -37,12 +39,15 @@ class Application(tornado.web.Application):
         ]
         
         tornado.web.Application.__init__(self, handlers, **settings)
+        self.db = config['db'];
         
 def main():
     parse_command_line()
     http_server = Application()
-    http_server.listen(options.port)
+    http_server.listen(server['port'])
+    print("服务已启动...请访问：http://%s:%d" % (server['host'], server['port']))
     tornado.ioloop.IOLoop.instance().start()
-    
+
 if __name__ == "__main__":
+    print("服务正在启动...")
     main()

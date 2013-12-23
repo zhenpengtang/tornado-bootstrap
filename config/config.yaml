@@ -1,0 +1,9 @@
+db:
+  host: localhost
+  port: 27017
+  database: test
+
+server:
+   host: localhost
+   port: 8080
+   cookie_secret: wozaiwolubianjiandaoyifenqian
