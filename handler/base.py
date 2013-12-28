@@ -30,7 +30,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def render_from_string(self, template_string, **template_vars):
         template = self.jinja2.from_string(template_string)
-        return template.render(**template_vars)
+        self.write(template.render(**template_vars))
     
     def write_error(self, status_code, **kwargs):
         print('what? error code:' + str(status_code))
